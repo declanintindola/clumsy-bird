@@ -5,7 +5,7 @@ var BirdEntity = me.Entity.extend({
         settings.width = 85;
         settings.height = 60;
         settings.framewidth = 85;
-        settings.frameheight = 60;
+        settings.frameheight = 150;
 
         this._super(me.Entity, 'init', [x, y, settings]);
         this.alwaysUpdate = true;
@@ -40,7 +40,7 @@ var BirdEntity = me.Entity.extend({
         }
         if (me.input.isKeyPressed('fly')) {
             me.audio.play('wing');
-            this.gravityForce = 0.02;
+            this.gravityForce = 0.000002;
             var currentPos = this.pos.y;
             // stop the previous tweens
             this.flyTween.stop();
@@ -108,8 +108,8 @@ var PipeEntity = me.Entity.extend({
     init: function(x, y) {
         var settings = {};
         settings.image = this.image = me.loader.getImage('pipe');
-        settings.width = 148;
-        settings.height= 1664;
+        settings.width = 198;
+        settings.height= 2964;
         settings.framewidth = 148;
         settings.frameheight = 1664;
 
@@ -142,7 +142,7 @@ var PipeGenerator = me.Renderable.extend({
         this.alwaysUpdate = true;
         this.generate = 0;
         this.pipeFrequency = 92;
-        this.pipeHoleSize = 1240;
+        this.pipeHoleSize = 90040;
         this.posX = me.game.viewport.width;
     },
 
